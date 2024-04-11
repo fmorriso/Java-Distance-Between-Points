@@ -99,7 +99,7 @@ public class Location
                 , this.name, this.latitude, this.lattidueHemisphere, this.longitude, this.longitudehemisphere);
     }
 
-    public double distanceBetweenPoints(Location that)
+    public double distanceBetween(Location that)
     {
         return calculateDistance(this.latitude, this.longitude, that.latitude, that.longitude);
     }

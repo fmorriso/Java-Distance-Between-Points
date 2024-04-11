@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -15,7 +14,14 @@ public class Main
         Location la = new Location("Los Angeles, CA", 34.052235, -118.243683);
         System.out.println(la);
         // Straight line distance: 2440.65 miles , 3927.85 kilometers (km) , 12886647 feet , 3927850 meters
-        System.out.format("Distance between %s and %s: %.2f KM%n", nyc.getName(), la.getName(), nyc.distanceBetweenPoints(la));
+        System.out.format("Distance between %s and %s: %.2f KM%n", nyc.getName(), la.getName(), nyc.distanceBetween(la));
+
+        Location mosc = new Location("Moscow, Russia", 55.75582600, 37.61729990);
+        System.out.println(mosc);
+
+        Location kiev = new Location("Kiev, Ukraine", 50.45466000, 30.52380000);
+        System.out.println(kiev);
+        System.out.format("Distance between %s and %s: %.2f KM%n", mosc.getName(), kiev.getName(), mosc.distanceBetween(kiev));
     }
 
     /** get the java version that is running the current program
