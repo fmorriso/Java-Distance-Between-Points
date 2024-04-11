@@ -7,6 +7,9 @@ public class Main
     {
         System.out.format("Distance between points using java version %s on %s%n",
                 getJavaVersion(), getCurrentLocalDateTime());
+
+        Location l1 = new Location("Test", 2.456, 110.987);
+        System.out.println(l1);
     }
 
     /** get the java version that is running the current program
