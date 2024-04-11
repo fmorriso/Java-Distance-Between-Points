@@ -9,8 +9,11 @@ public class Main
         System.out.format("Distance between points using java version %s on %s%n",
                 getJavaVersion(), getCurrentLocalDateTime());
 
-        Location l1 = new Location("Test",  2.456, Hemisphere.NORTH,110.987, Hemisphere.EAST);
+        Location l1 = new Location("Test`",  2.456, Hemisphere.NORTH,110.987, Hemisphere.EAST);
         System.out.println(l1);
+
+        Location l2 = new Location("Test2", -110, -30);
+        System.out.println(l2);
     }
 
     /** get the java version that is running the current program
