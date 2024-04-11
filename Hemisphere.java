@@ -1,6 +1,8 @@
 public enum Hemisphere
 {
-    NORTHERN,
-    SOUTHERN,
+    NORTH,
+    SOUTH,
+    EAST,
+    WEST,
     UNSPECIFIED
 }

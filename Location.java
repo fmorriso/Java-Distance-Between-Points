@@ -1,19 +1,26 @@
 public class Location
 {
     private String name;
-    private Hemisphere hemisphere;
+
     private double latitude;
+    private Hemisphere lattidueHemisphere;
+
     private double longitude;
+    private Hemisphere longitudehemisphere;
 
     private Location()
     {/* prevent uninitialized instances */}
 
-    public Location(String name, Hemisphere hemisphere ,double latitude, double longitude)
+    public Location(String name, double latitude, Hemisphere latitudeHemisphere ,double longitude, Hemisphere longitudeHemisphere)
     {
         this.name = name;
-        this.hemisphere = hemisphere;
+
         this.latitude = latitude;
+        this.lattidueHemisphere = latitudeHemisphere;
+
         this.longitude = longitude;
+        this.longitudehemisphere = longitudeHemisphere;
+
     }
 
     public String getName()
@@ -34,14 +41,15 @@ public class Location
     @Override
     public String toString()
     {
-        return String.format("Location{name='%s', hemisphere=%s, latitude=%.2f, longitude=%.2f}"
-                , this.name, this.hemisphere, this.latitude, this.longitude);
+        return String.format("Location{name='%s', latitude=%.2f %s,  longitude=%.2f %s}"
+                , this.name,  this.latitude,this.lattidueHemisphere, this.longitude, this.longitudehemisphere);
     }
 
     public double distanceBetweenPoints(Location that)
     {
         double latDiff = 0;
-        if(this.hemisphere == that.hemisphere )
+        // if the latitudes are in the same hemisphere, subtract; otherwise add
+        if(this.lattidueHemisphere == that.lattidueHemisphere)
         {
             latDiff = this.latitude - that.latitude;
         }
@@ -49,6 +57,11 @@ public class Location
         {
             latDiff = this.latitude + that.latitude;
         }
+
+        double lonDiff = 0;
+
+
+
         return 0;
     }
 }

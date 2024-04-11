@@ -9,7 +9,7 @@ public class Main
         System.out.format("Distance between points using java version %s on %s%n",
                 getJavaVersion(), getCurrentLocalDateTime());
 
-        Location l1 = new Location("Test", Hemisphere.NORTHERN, 2.456, 110.987);
+        Location l1 = new Location("Test",  2.456, Hemisphere.NORTH,110.987, Hemisphere.WEST);
         System.out.println(l1);
     }
 
