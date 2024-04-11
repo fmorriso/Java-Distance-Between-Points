@@ -32,9 +32,6 @@ public class Main
         return String.format(dtf.format(LocalDateTime.now()));
     }
 
-    public double distanceBetweenPoints(Location that)
-    {
-        return 0;
-    }
+
 
 }

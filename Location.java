@@ -37,6 +37,20 @@ public class Location
         return String.format("Location{name='%s', hemisphere=%s, latitude=%.2f, longitude=%.2f}"
                 , this.name, this.hemisphere, this.latitude, this.longitude);
     }
+
+    public double distanceBetweenPoints(Location that)
+    {
+        double latDiff = 0;
+        if(this.hemisphere == that.hemisphere )
+        {
+            latDiff = this.latitude - that.latitude;
+        }
+        else
+        {
+            latDiff = this.latitude + that.latitude;
+        }
+        return 0;
+    }
 }
 
 
