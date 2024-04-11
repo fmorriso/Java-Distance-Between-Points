@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -8,7 +9,7 @@ public class Main
         System.out.format("Distance between points using java version %s on %s%n",
                 getJavaVersion(), getCurrentLocalDateTime());
 
-        Location l1 = new Location("Test", 2.456, 110.987);
+        Location l1 = new Location("Test", Hemisphere.NORTHERN, 2.456, 110.987);
         System.out.println(l1);
     }
 
@@ -29,6 +30,11 @@ public class Main
     {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         return String.format(dtf.format(LocalDateTime.now()));
+    }
+
+    public double distanceBetweenPoints(Location that)
+    {
+        return 0;
     }
 
 }
