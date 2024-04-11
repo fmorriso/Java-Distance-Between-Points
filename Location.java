@@ -1,6 +1,7 @@
 public class Location
 {
-    public final double MEAN_RADIUS = 6371; // Earth's mean radius in Kilometers
+    public final double EARTH_MEAN_RADIUS_KM = 6371; // Earth's mean radius in Kilometers
+
     private String name;
 
     private double latitude;
@@ -75,26 +76,6 @@ public class Location
             this.longitudehemisphere = Hemisphere.WEST;
     }
 
-    public static double haversine(double lat1, double lon1,
-                                   double lat2, double lon2)
-    {
-        // distance between latitudes and longitudes
-        double dLat = Math.toRadians(lat2 - lat1);
-        double dLon = Math.toRadians(lon2 - lon1);
-
-        // convert to radians
-        lat1 = Math.toRadians(lat1);
-        lat2 = Math.toRadians(lat2);
-
-        // apply formulae
-        double a = Math.pow(Math.sin(dLat / 2), 2) +
-                Math.pow(Math.sin(dLon / 2), 2) *
-                        Math.cos(lat1) *
-                        Math.cos(lat2);
-        double rad = 6371;
-        double c = 2 * Math.asin(Math.sqrt(a));
-        return rad * c;
-    }
 
     public String getName()
     {
@@ -120,29 +101,21 @@ public class Location
 
     public double distanceBetweenPoints(Location that)
     {
-        double latDiff = 0;
-        // if the latitudes are in the same hemisphere, subtract; otherwise add
-        if (this.lattidueHemisphere == that.lattidueHemisphere) {
-            latDiff = this.latitude - that.latitude;
-        } else {
-            latDiff = this.latitude + that.latitude;
-        }
+        return calculateDistance(this.latitude, this.longitude, that.latitude, that.longitude);
+    }
 
-        double lonDiff = 0;
-        if (this.longitudehemisphere == that.longitudehemisphere) {
-            lonDiff = this.longitude - that.longitude;
-        } else {
-            lonDiff = this.longitude + that.longitude;
-        }
+    private double calculateDistance(double lat1, double lon1, double lat2, double lon2)
+    {
+        double lat1Rad = Math.toRadians(lat1);
+        double lat2Rad = Math.toRadians(lat2);
+        double lon1Rad = Math.toRadians(lon1);
+        double lon2Rad = Math.toRadians(lon2);
 
-        // Haversine java formula
-        // 11:20 into YouTube :
-        // https://www.youtube.com/watch?v=HaGj0DjX8W8
-        // d = 3440.1 * arccos[ ( sin(latA) * sin(latB) ) + cos(latA) * cos(latB) * cos(lonA - lonB) ]
-        // https://www.geeksforgeeks.org/haversine-formula-to-find-distance-between-two-points-on-a-sphere/
+        double x = (lon2Rad - lon1Rad) * Math.cos((lat1Rad + lat2Rad) / 2);
+        double y = (lat2Rad - lat1Rad);
+        double distance = Math.sqrt(x * x + y * y) * EARTH_MEAN_RADIUS_KM;
 
-
-        return 0;
+        return distance;
     }
 
 }

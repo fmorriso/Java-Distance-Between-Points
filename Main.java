@@ -9,11 +9,13 @@ public class Main
         System.out.format("Distance between points using java version %s on %s%n",
                 getJavaVersion(), getCurrentLocalDateTime());
 
-        Location l1 = new Location("Test`",  2.456, Hemisphere.NORTH,110.987, Hemisphere.EAST);
-        System.out.println(l1);
+        Location nyc = new Location("New York City`",  40.730610, -73.935242);
+        System.out.println(nyc);
 
-        Location l2 = new Location("Test2", -110, -30);
-        System.out.println(l2);
+        Location la = new Location("Los Angeles, CA", 34.052235, -118.243683);
+        System.out.println(la);
+        // Straight line distance: 2440.65 miles , 3927.85 kilometers (km) , 12886647 feet , 3927850 meters
+        System.out.format("Distance between %s and %s: %.2f KM%n", nyc.getName(), la.getName(), nyc.distanceBetweenPoints(la));
     }
 
     /** get the java version that is running the current program
