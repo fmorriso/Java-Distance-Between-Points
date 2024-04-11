@@ -4,12 +4,12 @@ import java.time.format.DateTimeFormatter;
 
 public class Main
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws Exception
     {
         System.out.format("Distance between points using java version %s on %s%n",
                 getJavaVersion(), getCurrentLocalDateTime());
 
-        Location l1 = new Location("Test",  2.456, Hemisphere.NORTH,110.987, Hemisphere.WEST);
+        Location l1 = new Location("Test",  2.456, Hemisphere.NORTH,110.987, Hemisphere.EAST);
         System.out.println(l1);
     }
 

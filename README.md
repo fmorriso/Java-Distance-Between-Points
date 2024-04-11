@@ -1,6 +1,16 @@
 # Java Distance Between Points
 
+## Distance between two lat/lon information
 
+https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
+
+https://www.geeksforgeeks.org/haversine-formula-to-find-distance-between-two-points-on-a-sphere/
+
+The distance between Big Ben in London (51.5007° N, 0.1246° W) and The Statue of Liberty in
+New York (40.6892° N, 74.0445° W) is 5574.8 km. This is not the exact measurement because the
+formula assumes that the Earth is a perfect sphere when in fact it is an oblate spheroid.
+
+https://en.wikipedia.org/wiki/Vincenty's_formulae
 
 ## Getting started
 
