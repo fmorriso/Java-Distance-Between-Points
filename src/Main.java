@@ -22,6 +22,14 @@ public class Main
         Location kiev = new Location("Kiev, Ukraine", 50.45466000, 30.52380000);
         System.out.println(kiev);
         System.out.format("Distance between %s and %s: %.2f KM%n", mosc.getName(), kiev.getName(), mosc.distanceBetween(kiev));
+
+        Location melbourne = new Location("Melbourne, Australia", -42.8806, 147.3250);
+        System.out.println(melbourne);
+
+        Location perth = new Location("Perth, Australia", -31.9505, 115.8605);
+        System.out.println(perth);
+
+        System.out.format("Distance between %s and %s: %.2f KM%n", melbourne.getName(), perth.getName(), melbourne.distanceBetween(perth));
     }
 
     /** get the java version that is running the current program
