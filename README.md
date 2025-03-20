@@ -13,10 +13,10 @@ Compute the distance between two points.
 
 ## Change History
 
-| Date       | Description                  |
-|:-----------|:-----------------------------|
-| 2025-03-10 | Initial creation             |
-| 2025-03-19 | Switch from GitLab to GitHub |
+| Date       | Description                                                                         |
+|:-----------|:------------------------------------------------------------------------------------|
+| 2025-03-10 | Initial creation                                                                    |
+| 2025-03-19 | Switch from GitLab to GitHub, turn on JDK 24 Preview feature: flexible constructors |
 
 ## References
 
