@@ -19,7 +19,7 @@ public class Main
         Location mosc = new Location("Moscow, Russia", 55.75582600, 37.61729990);
         System.out.println(mosc);
 
-        Location kiev = new Location("Kiev, Ukraine", 50.45466000, 30.52380000);
+        Location kiev = new Location("Kyiv, Ukraine", 50.45466000, 30.52380000);
         System.out.println(kiev);
         System.out.format("Distance between %s and %s: %.2f KM%n", mosc.getName(), kiev.getName(), mosc.distanceBetween(kiev));
 
