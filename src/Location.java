@@ -1,3 +1,9 @@
+import static java.lang.String.format;
+//
+import static java.lang.Math.cos;
+import static java.lang.Math.sqrt;
+import static java.lang.Math.toRadians;
+
 public class Location
 {
     public final double EARTH_MEAN_RADIUS_KM = 6371; // Earth's mean radius in Kilometers
@@ -30,7 +36,7 @@ public class Location
                 break;
 
             default:
-                throw new Exception(String.format("%s is not a valid hemisphere for latitude.  Valid values are North and South", latitudeHemisphere));
+                throw new Exception(format("%s is not a valid hemisphere for latitude.  Valid values are North and South", latitudeHemisphere));
         }
         this.latitude = latitude;
         this.lattidueHemisphere = latitudeHemisphere;
@@ -48,7 +54,7 @@ public class Location
                 break;
 
             default:
-                throw new Exception(String.format("%s is not a valid hemisphere for longitude.  Valid values are East and West", longitudeHemisphere));
+                throw new Exception(format("%s is not a valid hemisphere for longitude.  Valid values are East and West", longitudeHemisphere));
         }
 
         this.longitude = longitude;
@@ -97,7 +103,7 @@ public class Location
     @Override
     public String toString()
     {
-        return String.format("Location{name='%s', latitude=%.2f,  latitudeHemisphere=%s, longitude=%.2f, longitudeHemisphere=%s}"
+        return format("Location{name='%s', latitude=%.2f,  latitudeHemisphere=%s, longitude=%.2f, longitudeHemisphere=%s}"
                 , this.name, this.latitude, this.lattidueHemisphere, this.longitude, this.longitudeHemisphere);
     }
 
@@ -108,15 +114,15 @@ public class Location
 
     private double calculateDistance(double lat1, double lon1, double lat2, double lon2)
     {
-        double lat1Rad = Math.toRadians(lat1);
-        double lat2Rad = Math.toRadians(lat2);
-        double lon1Rad = Math.toRadians(lon1);
-        double lon2Rad = Math.toRadians(lon2);
+        double lat1Rad = toRadians(lat1);
+        double lat2Rad = toRadians(lat2);
+        double lon1Rad = toRadians(lon1);
+        double lon2Rad = toRadians(lon2);
 
-        double x = (lon2Rad - lon1Rad) * Math.cos((lat1Rad + lat2Rad) / 2);
+        double x = (lon2Rad - lon1Rad) * cos((lat1Rad + lat2Rad) / 2);
         double y = (lat2Rad - lat1Rad);
 
-        return Math.sqrt(x * x + y * y) * EARTH_MEAN_RADIUS_KM;
+        return sqrt(x * x + y * y) * EARTH_MEAN_RADIUS_KM;
     }
 
 }
