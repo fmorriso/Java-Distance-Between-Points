@@ -8,7 +8,7 @@ public class Location
     private Hemisphere lattidueHemisphere;
 
     private double longitude;
-    private Hemisphere longitudehemisphere;
+    private Hemisphere longitudeHemisphere;
 
     private Location()
     {/* prevent uninitialized instances */}
@@ -43,8 +43,8 @@ public class Location
                 break;
 
             case WEST:
-                if (latitude > 0)
-                    throw new Exception("West latitude cannot be positive");
+                if (longitude > 0)
+                    throw new Exception("West longitude cannot be positive");
                 break;
 
             default:
@@ -52,28 +52,31 @@ public class Location
         }
 
         this.longitude = longitude;
-        this.longitudehemisphere = longitudeHemisphere;
+        this.longitudeHemisphere = longitudeHemisphere;
 
     }
 
     public Location(String name, double latitude, double longitude) throws Exception
     {
-        this.name = name;
+        Hemisphere local_lattidueHemisphere;
+        Hemisphere local_longitudeHemisphere;
 
-        this.latitude = latitude;
         // Positive latitude is above the equator (N), and negative latitude is below the equator (S).
         if (latitude >= 0)
-            this.lattidueHemisphere = Hemisphere.NORTH;
+            local_lattidueHemisphere = Hemisphere.NORTH;
         else
-            this.lattidueHemisphere = Hemisphere.SOUTH;
+            local_lattidueHemisphere = Hemisphere.SOUTH;
 
 
-        this.longitude = longitude;
+
         // Positive longitude is east of the prime meridian, while negative longitude is west of the prime meridian (a north-south line that runs through a point in England).
         if(longitude >= 0)
-            this.longitudehemisphere = Hemisphere.EAST;
+            local_longitudeHemisphere = Hemisphere.EAST;
         else
-            this.longitudehemisphere = Hemisphere.WEST;
+            local_longitudeHemisphere = Hemisphere.WEST;
+
+        //NOTE: requires turning on JDK 24 preview feature: Flexible constructor bodies
+        this(name, latitude, local_lattidueHemisphere, longitude, local_longitudeHemisphere);
     }
 
 
@@ -95,8 +98,8 @@ public class Location
     @Override
     public String toString()
     {
-        return String.format("Location{name='%s', latitude=%.2f %s,  longitude=%.2f %s}"
-                , this.name, this.latitude, this.lattidueHemisphere, this.longitude, this.longitudehemisphere);
+        return String.format("Location{name='%s', latitude=%.2f,  latitudeHemisphere=%s, longitude=%.2f, longitudeHemisphere=%s}"
+                , this.name, this.latitude, this.lattidueHemisphere, this.longitude, this.longitudeHemisphere);
     }
 
     public double distanceBetween(Location that)
@@ -113,9 +116,8 @@ public class Location
 
         double x = (lon2Rad - lon1Rad) * Math.cos((lat1Rad + lat2Rad) / 2);
         double y = (lat2Rad - lat1Rad);
-        double distance = Math.sqrt(x * x + y * y) * EARTH_MEAN_RADIUS_KM;
 
-        return distance;
+        return Math.sqrt(x * x + y * y) * EARTH_MEAN_RADIUS_KM;
     }
 
 }
