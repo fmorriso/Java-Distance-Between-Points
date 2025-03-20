@@ -23,7 +23,7 @@ public class Main
         System.out.println(kiev);
         System.out.format("Distance between %s and %s: %.2f KM%n", mosc.getName(), kiev.getName(), mosc.distanceBetween(kiev));
 
-        Location melbourne = new Location("Melbourne, Australia", -42.8806, 147.3250);
+        Location melbourne = new Location("Melbourne, Australia", -37.8136, 144.9631);
         System.out.println(melbourne);
 
         Location perth = new Location("Perth, Australia", -31.9505, 115.8605);
