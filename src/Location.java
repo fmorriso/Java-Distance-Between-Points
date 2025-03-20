@@ -68,7 +68,6 @@ public class Location
             local_lattidueHemisphere = Hemisphere.SOUTH;
 
 
-
         // Positive longitude is east of the prime meridian, while negative longitude is west of the prime meridian (a north-south line that runs through a point in England).
         if(longitude >= 0)
             local_longitudeHemisphere = Hemisphere.EAST;
