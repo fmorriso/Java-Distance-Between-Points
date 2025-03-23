@@ -19,6 +19,7 @@ and the assumption Earth is a perfect sphere.
 |:-----------|:------------------------------------------------------------------------------------|
 | 2025-03-10 | Initial creation                                                                    |
 | 2025-03-19 | Switch from GitLab to GitHub, turn on JDK 24 Preview feature: flexible constructors |
+| 2025-03-23 | Add Geodesic and Vincente's formulas for calculating distance                       |
 
 ## References
 
