@@ -124,6 +124,7 @@ public class Location
         return sqrt(x * x + y * y) * EARTH_MEAN_RADIUS_KM;
     }
 
+
 }
 
 
