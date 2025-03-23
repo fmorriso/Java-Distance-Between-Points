@@ -16,7 +16,7 @@ public class Location
     private double longitude;
     private Hemisphere longitudeHemisphere;
 
-    private Location() {/* prevent uninitialized instances */}
+    protected Location() {/* prevent uninitialized instances */}
 
     public Location(String name, double latitude, Hemisphere latitudeHemisphere, double longitude, Hemisphere longitudeHemisphere) throws Exception
     {

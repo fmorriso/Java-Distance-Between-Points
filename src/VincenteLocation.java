@@ -13,6 +13,7 @@ public class VincenteLocation extends Location {
         super(name, latitude, longitude);
     }
 
+    protected VincenteLocation() {/* prevent uninitialized instances */}
 
     public double distanceBetweenVincenteMethod(VincenteLocation that){
         return calculateVincentyDistance(that.getLatitude(), that.getLongitude(), this.getLatitude(), this.getLongitude());
