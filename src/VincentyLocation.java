@@ -1,21 +1,21 @@
-public class VincenteLocation extends Location {
+public class VincentyLocation extends Location {
 
 
     private static final double a = 6378137.0;  // Semi-major axis (meters)
     private static final double f = 1 / 298.257223563;  // Flattening
     private static final double b = (1 - f) * a;  // Semi-minor axis
 
-    public VincenteLocation(String name, double latitude, Hemisphere latitudeHemisphere, double longitude, Hemisphere longitudeHemisphere) throws Exception {
+    public VincentyLocation(String name, double latitude, Hemisphere latitudeHemisphere, double longitude, Hemisphere longitudeHemisphere) throws Exception {
         super(name, latitude, latitudeHemisphere, longitude, longitudeHemisphere);
     }
 
-    public VincenteLocation(String name, double latitude, double longitude) throws Exception {
+    public VincentyLocation(String name, double latitude, double longitude) throws Exception {
         super(name, latitude, longitude);
     }
 
-    protected VincenteLocation() {/* prevent uninitialized instances */}
+    protected VincentyLocation() {/* prevent uninitialized instances */}
 
-    public double distanceBetweenVincenteMethod(VincenteLocation that){
+    public double distanceBetweenVincentyMethod(VincentyLocation that){
         return calculateVincentyDistance(that.getLatitude(), that.getLongitude(), this.getLatitude(), this.getLongitude());
     }
 

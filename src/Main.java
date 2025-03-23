@@ -8,14 +8,14 @@ public class Main
         System.out.format("Distance between points using java version %s on %s%n",
                 getJavaVersion(), getCurrentLocalDateTime());
 
-        VincenteLocation nyc = new VincenteLocation("New York City`",  40.730610, -73.935242);
+        VincentyLocation nyc = new VincentyLocation("New York City`",  40.730610, -73.935242);
         System.out.println(nyc);
 
-        VincenteLocation la = new VincenteLocation("Los Angeles, CA", 34.052235, -118.243683);
+        VincentyLocation la = new VincentyLocation("Los Angeles, CA", 34.052235, -118.243683);
         System.out.println(la);
         // Straight line distance: 2440.65 miles , 3927.85 kilometers (km) , 12886647 feet , 3927850 meters
         System.out.format("Distance between %s and %s: %.2f KM%n", nyc.getName(), la.getName(), nyc.distanceBetween(la));
-        System.out.format("Vincente Distance between %s and %s: %.2f KM%n", nyc.getName(), la.getName(), nyc.distanceBetweenVincenteMethod(la));
+        System.out.format("Vincenty Distance between %s and %s: %.2f KM%n", nyc.getName(), la.getName(), nyc.distanceBetweenVincentyMethod(la));
 
         Location mosc = new Location("Moscow, Russia", 55.75582600, 37.61729990);
         System.out.println(mosc);
