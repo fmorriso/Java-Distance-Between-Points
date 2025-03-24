@@ -17,10 +17,10 @@ public class Main
         System.out.format("Distance between %s and %s: %.2f KM%n", nyc.getName(), la.getName(), nyc.distanceBetween(la));
         System.out.format("Vincenty Distance between %s and %s: %.2f KM%n", nyc.getName(), la.getName(), nyc.distanceBetweenVincentyMethod(la));
 
-        Location mosc = new Location("Moscow, Russia", 55.75582600, 37.61729990);
+        MeanDiameterLocation mosc = new MeanDiameterLocation("Moscow, Russia", 55.75582600, 37.61729990);
         System.out.println(mosc);
 
-        Location kyiv = new Location("Kyiv, Ukraine", 50.45466000, 30.52380000);
+        MeanDiameterLocation kyiv = new MeanDiameterLocation("Kyiv, Ukraine", 50.45466000, 30.52380000);
         System.out.println(kyiv);
         System.out.format("Distance between %s and %s: %.2f KM%n", mosc.getName(), kyiv.getName(), mosc.distanceBetween(kyiv));
 
