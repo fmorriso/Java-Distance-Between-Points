@@ -7,11 +7,11 @@ and the assumption Earth is a perfect sphere.
 
 | Tool                 |  Version |
 |:---------------------|---------:|
-| Java                 | 24.0.0.0 |
-| JUnit                |   5.12.1 |
+| Java                 | 24.0.1.0 |
+| JUnit                |   5.13.1 |
 | net.sf.geographiclib |      2.0 |
-| IntelliJ             | 2024.3.5 |
-| VSCode               |   1.98.0 |
+| IntelliJ             | 2025.1.2 |
+| VSCode               |  1.101.0 |
 
 ## Change History
 
@@ -20,6 +20,7 @@ and the assumption Earth is a perfect sphere.
 | 2025-03-10 | Initial creation                                                                    |
 | 2025-03-19 | Switch from GitLab to GitHub, turn on JDK 24 Preview feature: flexible constructors |
 | 2025-03-23 | Add Geodesic and Vincente's formulas for calculating distance                       |
+| 2025-06-13 | upgrade to JUnit 5.13.1                                                             |
 
 ## References
 
